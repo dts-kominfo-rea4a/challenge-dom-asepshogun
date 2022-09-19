@@ -44,14 +44,14 @@
       document.getElementById('todo-title').innerHTML = "To Do List";
       document.getElementById('todo-subtitle').innerHTML = "- Today I need to -";
       function fnClickHandler(toDoItem) {
-        var isi = document.getElementById('todo-input').value
+        input = document.getElementById('todo-input').value
         output = document.createElement("li");
-        const textnode = document.createTextNode(isi);
+        const textnode = document.createTextNode(input);
         output.appendChild(textnode);
         document.getElementById("todo-output").appendChild(output);
       }
-      input = document.getElementById("todo-input");
-      input.addEventListener("keypress", function(event) {
+      button = document.getElementById("todo-input");
+      button.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
           event.preventDefault();
           document.getElementById("todo-submit").click();
