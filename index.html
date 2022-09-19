@@ -45,12 +45,10 @@
       document.getElementById('todo-subtitle').innerHTML = "- Today I need to -";
       function fnClickHandler(toDoItem) {
         var isi = document.getElementById('todo-input').value
-        if(isi != ""){
-          output = document.createElement("li");
-          const textnode = document.createTextNode(isi);
-          output.appendChild(textnode);
-          document.getElementById("todo-output").appendChild(output);
-        }
+        output = document.createElement("li");
+        const textnode = document.createTextNode(isi);
+        output.appendChild(textnode);
+        document.getElementById("todo-output").appendChild(output);
       }
       input = document.getElementById("todo-input");
       input.addEventListener("keypress", function(event) {
