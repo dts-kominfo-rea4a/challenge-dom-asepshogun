@@ -29,9 +29,9 @@
       <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
       <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
       <div class="fom">
-        <label for="fname" style="margin-left: 90px; background-color: paleturquoise;">To Do List</label><br><br>
+        <label for="fname" style="margin-left: 90px; background-color: paleturquoise;" id="todo-title"></label><br><br>
         <label for="fname" style="margin-left: 60px;">- Today I need to -</label><br>
-        <input type="text" id="todo" name="todo" value="">
+        <input type="text" id="todo-input" name="todo-input" value="">
         <input type="submit" id="submit" value="Submit" onclick="fnClickHandler()">
         <ul id="myList"></ul>
       </div>
@@ -49,8 +49,9 @@
       // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
       // Fungsi yang digunakan untuk menambahkan tulisan
       // Jangan ubah cara deklarasi fungsinya, cukup isi saja
+      document.getElementById('todo-title').value = "To Do List";
       function fnClickHandler(toDoItem) {
-        var isi = document.getElementById('todo').value
+        var isi = document.getElementById('todo-input').value
         if(isi != ""){
           output = document.createElement("li");
           const textnode = document.createTextNode(isi);
@@ -58,7 +59,7 @@
           document.getElementById("myList").appendChild(output);
         }
       }
-      input = document.getElementById("todo");
+      input = document.getElementById("todo-input");
       input.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
           event.preventDefault();
