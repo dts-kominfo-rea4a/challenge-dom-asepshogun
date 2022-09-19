@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Challenge - DOM</title>
   </head>
+  <style>
+    body {
+      background-color: fuchsia;
+    }
+    .fom{
+      margin: auto;
+      padding-left: 30px;
+      padding-top: 30px;
+      width: 300px;
+      min-height: 300px;
+      background-color: white;
+      border-radius: 0.2cm;
+    }
+  </style>
   <body>
     <div id="app">
       <!-- TODO: Buatlah sebuah header dengan id todo-title -->
@@ -14,7 +28,13 @@
       <!-- Section: input -->
       <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
       <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
-
+      <div class="fom">
+        <label for="fname" style="margin-left: 90px; background-color: paleturquoise;">To Do List</label><br><br>
+        <label for="fname" style="margin-left: 60px;">- Today I need to -</label><br>
+        <input type="text" id="todo" name="todo" value="">
+        <input type="submit" id="submit" value="Submit" onclick="fnClickHandler()">
+        <ul id="myList"></ul>
+      </div>
       <!-- Section output -->
       <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
     </div>
@@ -29,8 +49,22 @@
       // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
       // Fungsi yang digunakan untuk menambahkan tulisan
       // Jangan ubah cara deklarasi fungsinya, cukup isi saja
-      function fnClickHandler(toDoItem) {}
-
+      function fnClickHandler(toDoItem) {
+        var isi = document.getElementById('todo').value
+        if(isi != ""){
+          output = document.createElement("li");
+          const textnode = document.createTextNode(isi);
+          output.appendChild(textnode);
+          document.getElementById("myList").appendChild(output);
+        }
+      }
+      input = document.getElementById("todo");
+      input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("submit").click();
+        }
+      });
       // TODO: register event onclick / addEventListener untuk button
       // akan menjalankan fungsi fnClickHandler
       
