@@ -30,26 +30,19 @@
       <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
       <div class="fom">
         <label for="fname" style="margin-left: 90px; background-color: paleturquoise;" id="todo-title"></label><br><br>
-        <label for="fname" style="margin-left: 60px;">- Today I need to -</label><br>
+        <label for="fname" style="margin-left: 60px;" id="todo-subtitle"></label><br>
         <input type="text" id="todo-input">
         <button id="todo-submit" onclick="fnClickHandler()">Submit</button>
         <ul id="todo-output"></ul>
       </div>
-      <!-- Section output -->
-      <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
     </div>
 
-    <!-- ! Untuk tantangan ini, script jangan diubah ke external js yah ! -->
     <script>
-      // TODO: Deklarasi variable sesuai dengan kebutuhan di sini
       let button;
       let input;
       let output;
-
-      // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
-      // Fungsi yang digunakan untuk menambahkan tulisan
-      // Jangan ubah cara deklarasi fungsinya, cukup isi saja
-      document.getElementById('todo-title').value = "To Do List";
+      document.getElementById('todo-title').innerHTML = "To Do List";
+      document.getElementById('todo-subtitle').innerHTML = "- Today I need to -";
       function fnClickHandler(toDoItem) {
         var isi = document.getElementById('todo-input').value
         if(isi != ""){
@@ -66,11 +59,6 @@
           document.getElementById("todo-submit").click();
         }
       });
-      // TODO: register event onclick / addEventListener untuk button
-      // akan menjalankan fungsi fnClickHandler
-      
-      // TODO: register event onkeypress / addEventListener untuk input
-      // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
     </script>
   </body>
 </html>
