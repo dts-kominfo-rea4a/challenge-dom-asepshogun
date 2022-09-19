@@ -31,9 +31,9 @@
       <div class="fom">
         <label for="fname" style="margin-left: 90px; background-color: paleturquoise;" id="todo-title"></label><br><br>
         <label for="fname" style="margin-left: 60px;">- Today I need to -</label><br>
-        <input type="text" id="todo-input" name="todo-input" value="">
-        <input type="submit" id="submit" value="Submit" onclick="fnClickHandler()">
-        <ul id="myList"></ul>
+        <input type="text" id="todo-input">
+        <input type="submit" id="todo-submit" value="Submit" onclick="fnClickHandler()">
+        <ul id="todo-output"></ul>
       </div>
       <!-- Section output -->
       <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
@@ -56,14 +56,14 @@
           output = document.createElement("li");
           const textnode = document.createTextNode(isi);
           output.appendChild(textnode);
-          document.getElementById("myList").appendChild(output);
+          document.getElementById("todo-output").appendChild(output);
         }
       }
       input = document.getElementById("todo-input");
       input.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
           event.preventDefault();
-          document.getElementById("submit").click();
+          document.getElementById("todo-submit").click();
         }
       });
       // TODO: register event onclick / addEventListener untuk button
